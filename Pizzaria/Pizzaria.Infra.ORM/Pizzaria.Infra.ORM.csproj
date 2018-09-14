@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4007DEDE-0ACF-4363-9CC6-2A1C509F1DC6}</ProjectGuid>
+    <ProjectGuid>{FCFE6C67-EE6A-4D9F-8987-344D22AD3FB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pizzaria.Domain</RootNamespace>
-    <AssemblyName>Pizzaria.Domain</AssemblyName>
+    <RootNamespace>Pizzaria.Infra.ORM</RootNamespace>
+    <AssemblyName>Pizzaria.Infra.ORM</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Migrations, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Migrations.1.0.1.0\lib\net40-Client\Migrations.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,27 +53,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\Entidade.cs" />
-    <Compile Include="Base\IRepositorio.cs" />
-    <Compile Include="Exceptions\BussinessException.cs" />
-    <Compile Include="Exceptions\ErrorCodes.cs" />
-    <Compile Include="Exceptions\NotFoundException.cs" />
-    <Compile Include="Features\Bebidas\Bebida.cs" />
-    <Compile Include="Features\Bebidas\IBebidaRepositorio.cs" />
-    <Compile Include="Features\Bebidas\TamanhoBebida.cs" />
-    <Compile Include="Features\Clientes\Cliente.cs" />
-    <Compile Include="Features\Clientes\IClienteRepositorio.cs" />
-    <Compile Include="Features\Enderecos\Endereco.cs" />
-    <Compile Include="Features\Ordem de Compra\IOrdemRepositorio.cs" />
-    <Compile Include="Features\Ordem de Compra\Ordem.cs" />
-    <Compile Include="Features\Pizzas\IPizzaRepositorio.cs" />
-    <Compile Include="Features\Pizzas\Pizza.cs" />
-    <Compile Include="Features\Pizzas\TamanhoPizza.cs" />
-    <Compile Include="Features\Produtos\Produto.cs" />
-    <Compile Include="Features\Sabores\ISaborRepositorio.cs" />
-    <Compile Include="Features\Sabores\Sabor.cs" />
+    <Compile Include="Base\PizzariaContext.cs" />
+    <Compile Include="Features\Bebidas\BebidaMap.cs" />
+    <Compile Include="Features\Bebidas\BebidaRepositorio.cs" />
+    <Compile Include="Features\Clientes\ClienteRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pizzaria.Domain\Pizzaria.Domain.csproj">
+      <Project>{4007DEDE-0ACF-4363-9CC6-2A1C509F1DC6}</Project>
+      <Name>Pizzaria.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Ordens\" />
+    <Folder Include="Features\Pizzas\" />
+    <Folder Include="Features\Sabores\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

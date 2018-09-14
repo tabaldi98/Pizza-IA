@@ -33,5 +33,22 @@ namespace Pizzaria.Domain.Features.Pizzas
                 throw new Exception("A pizza não pode ter 3 sabores");
         }
 
+        public override string ToString()
+        {
+            string retorno = TamanhoPizza.ToString() + "-";
+
+            foreach (var item in Sabores)
+            {
+                retorno += item.Descricao;
+            }
+
+            return retorno;
+        }
+
+        public void Promocao(double porcentagem)
+        {
+            this.Valor = (this.Valor * 100) / porcentagem;
+        }
+
     }
 }

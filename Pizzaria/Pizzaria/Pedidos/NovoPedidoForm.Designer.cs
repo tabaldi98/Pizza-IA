@@ -32,7 +32,6 @@
             this.checkBoxBebida = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.dgResumo = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.groupBoxTroco = new System.Windows.Forms.GroupBox();
@@ -73,9 +72,11 @@
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.listBoxResumo = new System.Windows.Forms.ListBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgResumo)).BeginInit();
             this.groupBox9.SuspendLayout();
             this.groupBoxTroco.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -128,21 +129,13 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.dgResumo);
+            this.groupBox11.Controls.Add(this.listBoxResumo);
             this.groupBox11.Location = new System.Drawing.Point(6, 489);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(541, 98);
             this.groupBox11.TabIndex = 4;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Resumo";
-            // 
-            // dgResumo
-            // 
-            this.dgResumo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgResumo.Location = new System.Drawing.Point(6, 19);
-            this.dgResumo.Name = "dgResumo";
-            this.dgResumo.Size = new System.Drawing.Size(525, 72);
-            this.dgResumo.TabIndex = 0;
             // 
             // label11
             // 
@@ -256,6 +249,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.button5);
             this.groupBox8.Controls.Add(this.comboBox8);
             this.groupBox8.Controls.Add(this.label8);
             this.groupBox8.Location = new System.Drawing.Point(139, 18);
@@ -354,6 +348,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button4);
             this.groupBox5.Controls.Add(this.comboBox4);
             this.groupBox5.Controls.Add(this.comboBox3);
             this.groupBox5.Controls.Add(this.comboBox2);
@@ -372,7 +367,7 @@
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(198, 104);
+            this.comboBox4.Location = new System.Drawing.Point(198, 86);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(158, 21);
             this.comboBox4.TabIndex = 7;
@@ -380,7 +375,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(10, 104);
+            this.comboBox3.Location = new System.Drawing.Point(10, 86);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(158, 21);
             this.comboBox3.TabIndex = 6;
@@ -404,7 +399,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(195, 88);
+            this.label4.Location = new System.Drawing.Point(195, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
             this.label4.TabIndex = 3;
@@ -413,7 +408,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 88);
+            this.label3.Location = new System.Drawing.Point(7, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 2;
@@ -555,6 +550,34 @@
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // listBoxResumo
+            // 
+            this.listBoxResumo.FormattingEnabled = true;
+            this.listBoxResumo.Location = new System.Drawing.Point(15, 19);
+            this.listBoxResumo.Name = "listBoxResumo";
+            this.listBoxResumo.Size = new System.Drawing.Size(520, 69);
+            this.listBoxResumo.TabIndex = 0;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(266, 124);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 23);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Adicionar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(67, 113);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 23);
+            this.button5.TabIndex = 8;
+            this.button5.Text = "Adicionar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // NovoPedidoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -569,7 +592,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgResumo)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBoxTroco.ResumeLayout(false);
@@ -637,6 +659,8 @@
         private System.Windows.Forms.TextBox txtNomeCliente;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dgResumo;
+        private System.Windows.Forms.ListBox listBoxResumo;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

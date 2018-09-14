@@ -134,11 +134,29 @@ namespace Pizzaria.Pedidos
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             var list = new List<Produto>();
-            list.Add(bebida);
             list.Add(pizza);
 
-            dgResumo.DataSource = list;
+            foreach (var item in list)
+            {
+                listBoxResumo.Items.Add(item);
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var list = new List<Produto>();
+            list.Add(bebida);
+
+            foreach (var item in list)
+            {
+                listBoxResumo.Items.Add(item);
+            }
         }
     }
 }
