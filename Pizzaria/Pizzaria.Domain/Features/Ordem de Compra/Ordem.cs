@@ -25,7 +25,12 @@ namespace Pizzaria.Domain.Features.Ordem_de_Compra
         {
             if (Produtos == null)
                 Produtos = new List<Produto>();
+            DataPedido = DateTime.Now;
+        }
 
+        public void AdicionarProduto(Produto produto)
+        {
+            Produtos.Add(produto);
         }
 
         private double CalcularTotal()

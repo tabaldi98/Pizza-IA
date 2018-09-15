@@ -53,10 +53,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\DbContextFactory.cs" />
     <Compile Include="Base\PizzariaContext.cs" />
     <Compile Include="Features\Bebidas\BebidaMap.cs" />
     <Compile Include="Features\Bebidas\BebidaRepositorio.cs" />
+    <Compile Include="Features\Clientes\ClienteMap.cs" />
     <Compile Include="Features\Clientes\ClienteRepositorio.cs" />
+    <Compile Include="Features\Ordens\OrdemMap.cs" />
+    <Compile Include="Features\Ordens\OrdemRepositorio.cs" />
+    <Compile Include="Features\Pizzas\PizzaMap.cs" />
+    <Compile Include="Features\Pizzas\PizzaRepositorio.cs" />
+    <Compile Include="Features\Sabores\SaborMap.cs" />
+    <Compile Include="Features\Sabores\SaborRepositorio.cs" />
+    <Compile Include="Migrations\201809150013521_Version_Initial.cs" />
+    <Compile Include="Migrations\201809150013521_Version_Initial.Designer.cs">
+      <DependentUpon>201809150013521_Version_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809150038067_v1.cs" />
+    <Compile Include="Migrations\201809150038067_v1.Designer.cs">
+      <DependentUpon>201809150038067_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +87,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Features\Ordens\" />
-    <Folder Include="Features\Pizzas\" />
-    <Folder Include="Features\Sabores\" />
+    <EmbeddedResource Include="Migrations\201809150013521_Version_Initial.resx">
+      <DependentUpon>201809150013521_Version_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809150038067_v1.resx">
+      <DependentUpon>201809150038067_v1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

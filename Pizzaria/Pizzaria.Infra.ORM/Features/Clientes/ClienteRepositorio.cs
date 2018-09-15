@@ -43,12 +43,12 @@ namespace Pizzaria.Infra.ORM.Features.Clientes
 
         public List<Cliente> GetAll()
         {
-            return _context.Cliente.ToList();
+            return _context.Cliente.Include("Endereco").ToList();
         }
 
         public Cliente GetPorID(long id)
         {
-            return _context.Cliente.Where(x => x.ID == id).FirstOrDefault();
+            return _context.Cliente.Where(x => x.ID == id).Include("Endereco").FirstOrDefault();
         }
 
         public bool Remover(Cliente obj)

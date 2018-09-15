@@ -1,4 +1,5 @@
-﻿using Pizzaria.Domain.Features.Bebidas;
+﻿using Pizzaria.Domain.Exceptions;
+using Pizzaria.Domain.Features.Bebidas;
 using Pizzaria.Infra.ORM.Base;
 using System;
 using System.Collections.Generic;
@@ -42,12 +43,12 @@ namespace Pizzaria.Infra.ORM.Features.Bebidas
 
         public List<Bebida> GetAll()
         {
-            return _context.Bebida.ToList();
+            return _context.Bebida.Include("Sabor").ToList();
         }
 
         public Bebida GetPorID(long id)
         {
-            return _context.Bebida.Where(x => x.ID == id).FirstOrDefault();
+            return _context.Bebida.Where(x => x.ID == id).Include("Sabor").FirstOrDefault();
         }
 
         public bool Remover(Bebida obj)

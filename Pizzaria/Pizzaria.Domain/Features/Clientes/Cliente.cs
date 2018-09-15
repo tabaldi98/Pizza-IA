@@ -14,6 +14,7 @@ namespace Pizzaria.Domain.Features.Clientes
         public Endereco Endereco { get; set; }
         public string Nome { get; set; }
         public string Numero { get; set; }
+        public string Email { get; set; }
         public List<Ordem> Pedidos { get; }
     }
 }

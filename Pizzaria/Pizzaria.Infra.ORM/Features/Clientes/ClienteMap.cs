@@ -26,6 +26,7 @@ namespace Pizzaria.Infra.ORM.Features.Clientes
             Property(x => x.Nome).HasMaxLength(maxLength).IsRequired();
             Property(x => x.Numero).HasMaxLength(maxLength).IsRequired();
             Property(x => x.Numero).HasMaxLength(maxLength).IsRequired();
+            Property(x => x.Email).HasMaxLength(maxLength).IsRequired();
 
             Ignore(x => x.Pedidos);
         }

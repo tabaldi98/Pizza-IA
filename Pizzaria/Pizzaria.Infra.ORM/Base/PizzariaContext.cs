@@ -16,7 +16,7 @@ namespace Pizzaria.Infra.ORM.Base
 {
     public class PizzariaContext : DbContext
     {
-        protected PizzariaContext(string connection = "Pizzaria") : base(connection)
+        public PizzariaContext(string connection = "Name=Pizzaria") : base(connection)
         {
             this.Configuration.ProxyCreationEnabled = false;
             this.Configuration.LazyLoadingEnabled = true;
