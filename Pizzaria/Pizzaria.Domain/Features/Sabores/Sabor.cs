@@ -10,5 +10,11 @@ namespace Pizzaria.Domain.Features.Sabores
     public class Sabor : Entidade
     {
         public string Descricao { get; set; }
+        public TipoSabor TipoSabor { get; set; }
+
+        public override string ToString()
+        {
+            return Descricao;
+        }
     }
 }

@@ -59,19 +59,32 @@
     <Compile Include="Features\Bebidas\BebidaRepositorio.cs" />
     <Compile Include="Features\Clientes\ClienteMap.cs" />
     <Compile Include="Features\Clientes\ClienteRepositorio.cs" />
+    <Compile Include="Features\Enderecos\EnderecoRepositorio.cs" />
     <Compile Include="Features\Ordens\OrdemMap.cs" />
     <Compile Include="Features\Ordens\OrdemRepositorio.cs" />
     <Compile Include="Features\Pizzas\PizzaMap.cs" />
     <Compile Include="Features\Pizzas\PizzaRepositorio.cs" />
     <Compile Include="Features\Sabores\SaborMap.cs" />
     <Compile Include="Features\Sabores\SaborRepositorio.cs" />
-    <Compile Include="Migrations\201809150013521_Version_Initial.cs" />
-    <Compile Include="Migrations\201809150013521_Version_Initial.Designer.cs">
-      <DependentUpon>201809150013521_Version_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201809200052106_Initial.cs" />
+    <Compile Include="Migrations\201809200052106_Initial.Designer.cs">
+      <DependentUpon>201809200052106_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809150038067_v1.cs" />
-    <Compile Include="Migrations\201809150038067_v1.Designer.cs">
-      <DependentUpon>201809150038067_v1.cs</DependentUpon>
+    <Compile Include="Migrations\201809200056164_v2.cs" />
+    <Compile Include="Migrations\201809200056164_v2.Designer.cs">
+      <DependentUpon>201809200056164_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809200116199_v21.cs" />
+    <Compile Include="Migrations\201809200116199_v21.Designer.cs">
+      <DependentUpon>201809200116199_v21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809202255053_v3.cs" />
+    <Compile Include="Migrations\201809202255053_v3.Designer.cs">
+      <DependentUpon>201809202255053_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809231819178_v4.cs" />
+    <Compile Include="Migrations\201809231819178_v4.Designer.cs">
+      <DependentUpon>201809231819178_v4.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,11 +100,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809150013521_Version_Initial.resx">
-      <DependentUpon>201809150013521_Version_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809200052106_Initial.resx">
+      <DependentUpon>201809200052106_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809150038067_v1.resx">
-      <DependentUpon>201809150038067_v1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809200056164_v2.resx">
+      <DependentUpon>201809200056164_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809200116199_v21.resx">
+      <DependentUpon>201809200116199_v21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809202255053_v3.resx">
+      <DependentUpon>201809202255053_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809231819178_v4.resx">
+      <DependentUpon>201809231819178_v4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

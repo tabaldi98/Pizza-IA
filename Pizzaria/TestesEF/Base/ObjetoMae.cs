@@ -3,7 +3,6 @@ using Pizzaria.Domain.Features.Clientes;
 using Pizzaria.Domain.Features.Enderecos;
 using Pizzaria.Domain.Features.Ordem_de_Compra;
 using Pizzaria.Domain.Features.Pizzas;
-using Pizzaria.Domain.Features.Produtos;
 using Pizzaria.Domain.Features.Sabores;
 using System;
 using System.Collections.Generic;
@@ -75,8 +74,7 @@ namespace TestesEF.Base
             };
 
             ordem.ID = 1;
-            ordem.ValorEntrega = 0;
-            ordem.Produtos = new List<Produto>();
+            ordem.ValorEntrega = 5;
 
             var pizza = new Pizza()
             {
@@ -93,8 +91,21 @@ namespace TestesEF.Base
                 Valor = 100,
             };
 
-            ordem.AdicionarProduto(pizza);
+            ordem.AdicionarPizza(pizza);
 
+            var bebida = new Bebida()
+            {
+                ID = 1,
+                TamanhoBebida = TamanhoBebida.Garrafa,
+                Valor = 14,
+                Sabor = new Sabor()
+                {
+                    ID = 1,
+                    Descricao = "Coca-Cola",
+                },
+            };
+
+            ordem.AdicionarBebida(bebida);
             return ordem;
         }
 

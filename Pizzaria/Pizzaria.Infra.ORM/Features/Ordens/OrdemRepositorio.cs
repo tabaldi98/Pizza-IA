@@ -43,7 +43,7 @@ namespace Pizzaria.Infra.ORM.Features.Ordens
 
         public List<Ordem> GetAll()
         {
-            return _context.Ordem.Include("Cliente").Include("Produtos").ToList();
+            return _context.Ordem.Include("Cliente").Include("Pizzas").Include("Bebidas").ToList();
         }
 
         public Ordem GetPorID(long id)

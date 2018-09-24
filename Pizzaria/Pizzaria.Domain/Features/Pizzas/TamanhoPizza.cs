@@ -8,10 +8,10 @@ namespace Pizzaria.Domain.Features.Pizzas
 {
     public enum TamanhoPizza
     {
-        Pequena,
-        Media,
-        Grande,
-        Gigante,
-        ExtraGigante
+        Pequena = 1,
+        Media = 2,
+        Grande = 3,
+        Gigante = 4,
+        ExtraGigante = 5
     }
 }

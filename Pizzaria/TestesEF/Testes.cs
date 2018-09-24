@@ -28,9 +28,11 @@ namespace TestesEF
             context = new PizzariaContext();
             PizzaRepositorio pizzaRepositorio = new PizzaRepositorio(context);
 
-            //ordemRepositorio.Add(ObjetoMae.GetOrdem());
+            //var ordem = ObjetoMae.GetOrdem();
+            //ordemRepositorio.Add(ordem);
 
-            var list = ordemRepositorio.GetAll();
+            var a = ordemRepositorio.GetAll();
+            
         }
     }
 }

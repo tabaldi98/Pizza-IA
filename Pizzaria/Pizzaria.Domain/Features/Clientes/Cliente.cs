@@ -16,5 +16,10 @@ namespace Pizzaria.Domain.Features.Clientes
         public string Numero { get; set; }
         public string Email { get; set; }
         public List<Ordem> Pedidos { get; }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

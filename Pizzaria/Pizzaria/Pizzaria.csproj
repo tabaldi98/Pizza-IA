@@ -32,7 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=4.3.0.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.4.3.0\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -45,24 +55,137 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Features\Bebidas\BebidaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Bebidas\BebidaControl.Designer.cs">
+      <DependentUpon>BebidaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Bebidas\BebidaFormulario.cs" />
+    <Compile Include="Features\Bebidas\BebidaPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Bebidas\BebidaPopUp.Designer.cs">
+      <DependentUpon>BebidaPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Clientes\ClienteControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Clientes\ClienteControl.Designer.cs">
+      <DependentUpon>ClienteControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Clientes\ClienteFormulario.cs" />
+    <Compile Include="Features\Clientes\ClientePopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Clientes\ClientePopUp.Designer.cs">
+      <DependentUpon>ClientePopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Enderecos\EnderecoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Enderecos\EnderecoPopUp.Designer.cs">
+      <DependentUpon>EnderecoPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Enderecos\NovoEnderecoPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Enderecos\NovoEnderecoPopUp.Designer.cs">
+      <DependentUpon>NovoEnderecoPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pedidos\PedidoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Pedidos\PedidoControl.Designer.cs">
+      <DependentUpon>PedidoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pedidos\PedidoFormulario.cs" />
+    <Compile Include="Features\Pedidos\SelecionarClienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Pedidos\SelecionarClienteForm.Designer.cs">
+      <DependentUpon>SelecionarClienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pizzas\PizzaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Features\Pizzas\PizzaControl.Designer.cs">
+      <DependentUpon>PizzaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Pizzas\PizzaFormulario.cs" />
+    <Compile Include="Features\Pizzas\PizzaPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Pizzas\PizzaPopUp.Designer.cs">
+      <DependentUpon>PizzaPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Sabores\NovoSaborPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Sabores\NovoSaborPopUp.Designer.cs">
+      <DependentUpon>NovoSaborPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\Sabores\SaborPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Features\Sabores\SaborPopUp.Designer.cs">
+      <DependentUpon>SaborPopUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\NovoPedidoForm.cs">
+    <Compile Include="Base\GerenciadorFormulario.cs" />
+    <Compile Include="Features\Pedidos\NovoPedidoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos\NovoPedidoForm.Designer.cs">
+    <Compile Include="Features\Pedidos\NovoPedidoForm.Designer.cs">
       <DependentUpon>NovoPedidoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Features\Bebidas\BebidaControl.resx">
+      <DependentUpon>BebidaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Bebidas\BebidaPopUp.resx">
+      <DependentUpon>BebidaPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Clientes\ClienteControl.resx">
+      <DependentUpon>ClienteControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Clientes\ClientePopUp.resx">
+      <DependentUpon>ClientePopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Enderecos\EnderecoPopUp.resx">
+      <DependentUpon>EnderecoPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Enderecos\NovoEnderecoPopUp.resx">
+      <DependentUpon>NovoEnderecoPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Pedidos\PedidoControl.resx">
+      <DependentUpon>PedidoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Pedidos\SelecionarClienteForm.resx">
+      <DependentUpon>SelecionarClienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Pizzas\PizzaControl.resx">
+      <DependentUpon>PizzaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Pizzas\PizzaPopUp.resx">
+      <DependentUpon>PizzaPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Sabores\NovoSaborPopUp.resx">
+      <DependentUpon>NovoSaborPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Features\Sabores\SaborPopUp.resx">
+      <DependentUpon>SaborPopUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\NovoPedidoForm.resx">
+    <EmbeddedResource Include="Features\Pedidos\NovoPedidoForm.resx">
       <DependentUpon>NovoPedidoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -74,6 +197,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,10 +212,23 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Pizzaria.Aplicacao\Pizzaria.Aplicacao.csproj">
+      <Project>{5EA15A43-F555-41A6-8643-A2FFF2ACD2D1}</Project>
+      <Name>Pizzaria.Aplicacao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pizzaria.Domain\Pizzaria.Domain.csproj">
       <Project>{4007DEDE-0ACF-4363-9CC6-2A1C509F1DC6}</Project>
       <Name>Pizzaria.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pizzaria.Infra.ORM\Pizzaria.Infra.ORM.csproj">
+      <Project>{FCFE6C67-EE6A-4D9F-8987-344D22AD3FB3}</Project>
+      <Name>Pizzaria.Infra.ORM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pizzaria.Infra\Pizzaria.Infra.csproj">
+      <Project>{C7187974-50A3-4D1D-822E-9A20BD13C55F}</Project>
+      <Name>Pizzaria.Infra</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

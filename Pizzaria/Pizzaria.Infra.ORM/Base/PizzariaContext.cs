@@ -1,5 +1,6 @@
 ﻿using Pizzaria.Domain.Features.Bebidas;
 using Pizzaria.Domain.Features.Clientes;
+using Pizzaria.Domain.Features.Enderecos;
 using Pizzaria.Domain.Features.Ordem_de_Compra;
 using Pizzaria.Domain.Features.Pizzas;
 using Pizzaria.Domain.Features.Sabores;
@@ -29,6 +30,7 @@ namespace Pizzaria.Infra.ORM.Base
         public DbSet<Ordem> Ordem { get; set; }
         public DbSet<Pizza> Pizza { get; set; }
         public DbSet<Sabor> Sabor { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -51,14 +51,17 @@
     <Compile Include="Features\Clientes\Cliente.cs" />
     <Compile Include="Features\Clientes\IClienteRepositorio.cs" />
     <Compile Include="Features\Enderecos\Endereco.cs" />
+    <Compile Include="Features\Enderecos\IEnderecoRepositorio.cs" />
     <Compile Include="Features\Ordem de Compra\IOrdemRepositorio.cs" />
     <Compile Include="Features\Ordem de Compra\Ordem.cs" />
+    <Compile Include="Features\Ordem de Compra\StatusOrdem.cs" />
+    <Compile Include="Features\Ordem de Compra\TipoPagamento.cs" />
     <Compile Include="Features\Pizzas\IPizzaRepositorio.cs" />
     <Compile Include="Features\Pizzas\Pizza.cs" />
     <Compile Include="Features\Pizzas\TamanhoPizza.cs" />
-    <Compile Include="Features\Produtos\Produto.cs" />
     <Compile Include="Features\Sabores\ISaborRepositorio.cs" />
     <Compile Include="Features\Sabores\Sabor.cs" />
+    <Compile Include="Features\Sabores\TipoSabor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

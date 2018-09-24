@@ -51,6 +51,11 @@ namespace Pizzaria.Infra.ORM.Features.Clientes
             return _context.Cliente.Where(x => x.ID == id).Include("Endereco").FirstOrDefault();
         }
 
+        public List<Cliente> GetPorTelefone(string telefone)
+        {
+            return _context.Cliente.Where(x => x.Numero.Contains(telefone)).ToList();
+        }
+
         public bool Remover(Cliente obj)
         {
             var getEntity = _context.Set<Cliente>().Where(e => e.ID == obj.ID).FirstOrDefault();

@@ -1,19 +1,17 @@
 ﻿using Pizzaria.Domain.Base;
-using Pizzaria.Domain.Features.Produtos;
 using Pizzaria.Domain.Features.Sabores;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pizzaria.Domain.Features.Pizzas
 {
-    public class Pizza : Produto
+    public class Pizza : Entidade
     {
         public TamanhoPizza TamanhoPizza { get; set; }
 
         public List<Sabor> Sabores { get; set; }
+
+        public double Valor { get; set; }
 
         public Pizza()
         {
@@ -23,6 +21,11 @@ namespace Pizzaria.Domain.Features.Pizzas
         public void AdicionarSabor(Sabor sabor)
         {
             this.Sabores.Add(sabor);
+        }
+
+        public void RemoverTodosSabores()
+        {
+            this.Sabores = new List<Sabor>();
         }
 
         public void Validar()
@@ -35,11 +38,21 @@ namespace Pizzaria.Domain.Features.Pizzas
 
         public override string ToString()
         {
-            string retorno = TamanhoPizza.ToString() + "-";
+
+            string retorno = "Pizza: " + TamanhoPizza.ToString();
+
+            if (Sabores.Count < 1)
+                return retorno;
+
+            if (Sabores.Count == 1)
+                retorno += " | Sabor";
+
+            if (Sabores.Count > 1)
+                retorno += " | Sabores";
 
             foreach (var item in Sabores)
             {
-                retorno += item.Descricao;
+                retorno += " - " + item.Descricao;
             }
 
             return retorno;

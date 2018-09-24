@@ -1,4 +1,5 @@
 ﻿using Pizzaria.Domain.Exceptions;
+using Pizzaria.Domain.Features.Pizzas;
 using Pizzaria.Domain.Features.Sabores;
 using Pizzaria.Infra.ORM.Base;
 using System;
@@ -46,9 +47,20 @@ namespace Pizzaria.Infra.ORM.Features.Sabores
             return _context.Sabor.ToList();
         }
 
+        public List<Sabor> GetAllPorTipo(TipoSabor tipoSabor)
+        {
+            return _context.Sabor.Where(x => x.TipoSabor == tipoSabor).ToList();
+
+        }
+
         public Sabor GetPorID(long id)
         {
             return _context.Sabor.Where(x => x.ID == id).FirstOrDefault();
+        }
+
+        public List<Sabor> ObterPorDescricao(string sabor, TipoSabor tipoSabor)
+        {
+            return _context.Sabor.Where(x => x.TipoSabor == tipoSabor && x.Descricao.Contains(sabor)).ToList();
         }
 
         public bool Remover(Sabor obj)

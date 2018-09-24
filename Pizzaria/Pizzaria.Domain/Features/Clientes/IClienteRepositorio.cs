@@ -9,5 +9,7 @@ namespace Pizzaria.Domain.Features.Clientes
 {
     public interface IClienteRepositorio : IRepositorio<Cliente>
     {
+        List<Cliente> GetPorTelefone(string telefone);
+
     }
 }

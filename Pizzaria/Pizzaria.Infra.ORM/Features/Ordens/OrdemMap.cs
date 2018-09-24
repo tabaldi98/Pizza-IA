@@ -16,9 +16,13 @@ namespace Pizzaria.Infra.ORM.Features.Ordens
 
             HasKey(x => x.ID);
 
-            HasMany(f => f.Produtos).WithMany().Map(m =>
+            HasMany(f => f.Pizzas).WithMany().Map(m =>
             {
-                m.MapLeftKey("OrdemID"); m.MapRightKey("ProdutoID"); m.ToTable("Produtos_Ordem");
+                m.MapLeftKey("OrdemID"); m.MapRightKey("PizzaID"); m.ToTable("Pizza_Ordem");
+            });
+            HasMany(f => f.Bebidas).WithMany().Map(m =>
+            {
+                m.MapLeftKey("OrdemID"); m.MapRightKey("BebidaID"); m.ToTable("Bebida_Ordem");
             });
 
             HasRequired(c => c.Cliente)

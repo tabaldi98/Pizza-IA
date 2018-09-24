@@ -1,11 +1,9 @@
 ﻿using Pizzaria.Domain.Base;
+using Pizzaria.Domain.Features.Bebidas;
 using Pizzaria.Domain.Features.Clientes;
-using Pizzaria.Domain.Features.Produtos;
+using Pizzaria.Domain.Features.Pizzas;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Pizzaria.Domain.Features.Ordem_de_Compra
 {
@@ -13,7 +11,9 @@ namespace Pizzaria.Domain.Features.Ordem_de_Compra
     {
         public Cliente Cliente { get; set; }
 
-        public List<Produto> Produtos { get; set; }
+        public List<Pizza> Pizzas { get; set; }
+
+        public List<Bebida> Bebidas { get; set; }
 
         public DateTime DataPedido { get; set; }
 
@@ -21,23 +21,44 @@ namespace Pizzaria.Domain.Features.Ordem_de_Compra
 
         public double ValorTotal { get { return CalcularTotal(); } }
 
+        public TipoPagamento TipoPagamento { get; set; }
+        public StatusOrdem StatusOrdem { get; set; }
+
         public Ordem()
         {
-            if (Produtos == null)
-                Produtos = new List<Produto>();
+            if (Pizzas == null)
+                Pizzas = new List<Pizza>();
+            if (Bebidas == null)
+                Bebidas = new List<Bebida>();
+
             DataPedido = DateTime.Now;
         }
 
-        public void AdicionarProduto(Produto produto)
+        public void AdicionarPizza(Pizza pizza)
         {
-            Produtos.Add(produto);
+            Pizzas.Add(pizza);
+        }
+        public void AdicionarBebida(Bebida bebida)
+        {
+            Bebidas.Add(bebida);
+        }
+
+        public void RemoverTodosProdutos()
+        {
+            this.Pizzas = new List<Pizza>();
+            this.Bebidas = new List<Bebida>();
         }
 
         private double CalcularTotal()
         {
             double valor = 0;
 
-            foreach (var item in Produtos)
+            foreach (var item in Pizzas)
+            {
+                valor += item.Valor;
+            }
+
+            foreach (var item in Bebidas)
             {
                 valor += item.Valor;
             }
